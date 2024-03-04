@@ -16,57 +16,53 @@ class Carousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    final screenWidth = mediaQuery.size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final screenHeight = MediaQuery.sizeOf(context).height;
 
-    double carouselHeight = 300;
-    double carouselWidth = 200;
+    bool isLargeScreen = screenWidth >= 800;
+    double carouselHeight = screenHeight * 0.5;
 
-    if (screenWidth >= 600) {
-      carouselHeight = 400;
-      carouselWidth = 300;
-    }
+    return Center(
+      child: SizedBox(
+        width: isLargeScreen ? screenWidth * 0.8 : screenWidth,
+        child: CarouselSlider.builder(
+          itemCount: movies.length,
+          itemBuilder: (context, itemIndex, pageViewIndex) {
+            var actualMovie = movies[itemIndex];
 
-    return SizedBox(
-      width: double.infinity,
-      child: CarouselSlider.builder(
-        itemCount: movies.length,
-        itemBuilder: (context, itemIndex, pageViewIndex) {
-          var actualMovie = movies[itemIndex];
-
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MoviePage(
-                    movie: actualMovie,
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MoviePage(
+                      movie: actualMovie,
+                    ),
+                  ),
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: SizedBox(
+                  height: carouselHeight,
+                  child: Image.network(
+                    '${Constants.imagePath}${actualMovie.posterPath}',
+                    filterQuality: FilterQuality.high,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              );
-            },
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: SizedBox(
-                height: carouselHeight,
-                width: carouselWidth,
-                child: Image.network(
-                  '${Constants.imagePath}${actualMovie.posterPath}',
-                  filterQuality: FilterQuality.high,
-                  fit: BoxFit.cover,
-                ),
               ),
-            ),
-          );
-        },
-        options: CarouselOptions(
-          height: carouselHeight,
-          autoPlay: true,
-          viewportFraction: kIsWeb ? 0.2 : 0.55,
-          autoPlayCurve: Curves.fastOutSlowIn,
-          pageSnapping: true,
-          enlargeCenterPage: true,
-          autoPlayAnimationDuration: const Duration(seconds: 1),
+            );
+          },
+          options: CarouselOptions(
+            height: carouselHeight,
+            autoPlay: true,
+            viewportFraction: isLargeScreen ? 0.4 : 0.55,
+            autoPlayCurve: Curves.fastOutSlowIn,
+            pageSnapping: true,
+            enlargeCenterPage: true,
+            autoPlayAnimationDuration: const Duration(seconds: 1),
+          ),
         ),
       ),
     );
