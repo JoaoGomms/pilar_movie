@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_db_app/src/models/movie_model.dart';
+import 'package:movie_db_app/src/modules/movies/data/models/movie_model.dart';
 
-import '../../../services/constants.dart';
-import '../../view/pages/movie_page.dart';
+import '../../../data/services/constants.dart';
+import '../../pages/movie_page.dart';
 
 class Carousel extends StatelessWidget {
   const Carousel({

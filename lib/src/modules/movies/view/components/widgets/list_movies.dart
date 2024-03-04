@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/movie_model.dart';
-import '../../../services/constants.dart';
+import '../../../data/models/movie_model.dart';
+import '../../../data/services/constants.dart';
 
 class HorizontalSlider extends StatelessWidget {
   final Function(Movie) onTap;

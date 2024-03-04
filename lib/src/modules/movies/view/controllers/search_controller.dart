@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
-import 'package:movie_db_app/src/models/movie_model.dart';
+import 'package:movie_db_app/src/modules/movies/data/models/movie_model.dart';
 
-import '../../../stores/movies_store.dart';
+import '../../stores/movies_store.dart';
 part 'search_controller.g.dart';
 
 class SearchController = _SearchControllerBase with _$SearchController;

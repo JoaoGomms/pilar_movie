@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/text_model.dart';
+import '../../../l10n/movie_l10n.dart';
 
-class RatingContainer extends StatelessWidget {
-  final double rating;
-  final TextModel text = TextModel();
+class ReleaseDateContainer extends StatelessWidget {
+  final String releaseDate;
 
-  RatingContainer({super.key, required this.rating});
+  final MovieL10n text = MovieL10n();
+
+  ReleaseDateContainer({super.key, required this.releaseDate});
 
   @override
   Widget build(BuildContext context) {
@@ -21,23 +22,19 @@ class RatingContainer extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            text.avaliation,
+            text.nowPlayingMovies,
             style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const Icon(
-            Icons.star,
-            color: Colors.amber,
-          ),
           Text(
-            '${rating.toStringAsFixed(1)}/10',
+            releaseDate,
             style: const TextStyle(
               fontSize: 12,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w400,
             ),
-          ),
+          )
         ],
       ),
     );

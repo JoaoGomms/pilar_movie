@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
-import '../../services/constants.dart';
+import '../../modules/movies/data/services/constants.dart';
 
 class HttpClient {
   final baseUrl = 'api.themoviedb.org';

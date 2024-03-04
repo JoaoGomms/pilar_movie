@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movie_db_app/src/home/view/controllers/search_controller.dart'
+import 'package:movie_db_app/src/modules/movies/view/controllers/search_controller.dart'
     as my;
 
-import '../../components/widgets/list_search.dart';
+import '../components/widgets/list_search.dart';
 
 class SearchPage extends StatefulWidget {
   final String searchString;

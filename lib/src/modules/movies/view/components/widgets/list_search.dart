@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../../models/movie_model.dart';
-import '../../../services/constants.dart';
-import '../../view/pages/movie_page.dart';
+import '../../../data/models/movie_model.dart';
+import '../../../data/services/constants.dart';
+import '../../pages/movie_page.dart';
 
 class ListSearchComponent extends StatelessWidget {
   const ListSearchComponent({Key? key, required this.movies}) : super(key: key);

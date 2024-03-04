@@ -1,11 +1,11 @@
 import 'dart:developer';
 
 import 'package:mobx/mobx.dart';
-import 'package:movie_db_app/src/error/failure.dart';
-import 'package:movie_db_app/src/models/movie_model.dart';
-import 'package:movie_db_app/src/services/movie_service.dart';
+import 'package:movie_db_app/src/modules/movies/data/error/failure.dart';
+import 'package:movie_db_app/src/modules/movies/data/models/movie_model.dart';
+import 'package:movie_db_app/src/modules/movies/data/services/movie_service.dart';
 
-import '../models/cast_model.dart';
+import '../data/models/cast_model.dart';
 
 part 'movies_store.g.dart';
 
