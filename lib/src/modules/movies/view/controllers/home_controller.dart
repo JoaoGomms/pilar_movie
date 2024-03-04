@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:mobx/mobx.dart';
-import 'package:movie_db_app/src/home/components/widget_status_enum.dart';
-import 'package:movie_db_app/src/stores/movies_store.dart';
+import 'package:movie_db_app/src/modules/movies/view/components/widget_status_enum.dart';
+import 'package:movie_db_app/src/modules/movies/stores/movies_store.dart';
 
-import '../../../models/movie_model.dart';
+import '../../data/models/movie_model.dart';
 part 'home_controller.g.dart';
 
 class HomeController = _HomeControllerBase with _$HomeController;

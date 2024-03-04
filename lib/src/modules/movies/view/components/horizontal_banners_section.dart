@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_db_app/src/home/components/widget_status_enum.dart';
-import 'package:movie_db_app/src/home/components/widgets/carousel.dart';
-import 'package:movie_db_app/src/home/components/widgets/list_movies.dart';
-import 'package:movie_db_app/src/home/view/pages/movie_page.dart';
+import 'package:movie_db_app/src/modules/movies/view/components/widget_status_enum.dart';
+import 'package:movie_db_app/src/modules/movies/view/components/widgets/carousel.dart';
+import 'package:movie_db_app/src/modules/movies/view/components/widgets/list_movies.dart';
+import 'package:movie_db_app/src/modules/movies/view/pages/movie_page.dart';
 
-import '../../theme/colors/base_colors.dart';
-import '../../models/movie_model.dart';
+import '../../../../theme/colors/base_colors.dart';
+import '../../data/models/movie_model.dart';
 
 class HorizontalMoviesSection extends StatelessWidget {
   final String sectionLabel;
@@ -50,9 +50,10 @@ class HorizontalMoviesSection extends StatelessWidget {
               : HorizontalSlider(
                   movies: movies,
                   onTap: (movie) {
-                    Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => MoviePage(movie: movie)));
-                    
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MoviePage(movie: movie)));
                   })
         ]
       ],

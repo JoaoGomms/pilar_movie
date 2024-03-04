@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movie_db_app/src/home/components/horizontal_banners_section.dart';
-import 'package:movie_db_app/src/home/view/controllers/home_controller.dart';
+import 'package:movie_db_app/src/modules/movies/view/components/horizontal_banners_section.dart';
+import 'package:movie_db_app/src/modules/movies/view/controllers/home_controller.dart';
 import 'package:movie_db_app/src/theme/colors/base_colors.dart';
-import 'package:movie_db_app/src/models/text_model.dart';
+import 'package:movie_db_app/src/modules/movies/l10n/movie_l10n.dart';
 
-import '../../../models/movie_model.dart';
+import '../../data/models/movie_model.dart';
 import 'search_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  final TextModel text = TextModel();
+  final MovieL10n text = MovieL10n();
   final BaseColors color = BaseColors();
   @override
   Widget build(BuildContext context) {

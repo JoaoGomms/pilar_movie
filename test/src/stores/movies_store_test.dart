@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:movie_db_app/src/models/cast_model.dart';
-import 'package:movie_db_app/src/models/movie_model.dart';
-import 'package:movie_db_app/src/services/movie_service.dart';
-import 'package:movie_db_app/src/stores/movies_store.dart';
+import 'package:movie_db_app/src/modules/movies/data/models/cast_model.dart';
+import 'package:movie_db_app/src/modules/movies/data/models/movie_model.dart';
+import 'package:movie_db_app/src/modules/movies/data/services/movie_service.dart';
+import 'package:movie_db_app/src/modules/movies/stores/movies_store.dart';
 
 class MovieServiceMock with Mock implements MovieService {}
 
@@ -32,7 +32,7 @@ void main() {
     expect(store.trendingMovies, isNotEmpty);
   });
 
-   test('Should return a list of Movies for the Popular Type', () async {
+  test('Should return a list of Movies for the Popular Type', () async {
     // arrange
     when(
       () => serviceMock.getPopularMovies(),
@@ -49,7 +49,7 @@ void main() {
     expect(store.popularMovies, isNotEmpty);
   });
 
-   test('Should return a list of Movies for the Upcoming Type', () async {
+  test('Should return a list of Movies for the Upcoming Type', () async {
     // arrange
     when(
       () => serviceMock.getUpComingMovies(),
@@ -66,7 +66,7 @@ void main() {
     expect(store.upComingMovies, isNotEmpty);
   });
 
-   test('Should return a list of Movies for the Now Playing Type', () async {
+  test('Should return a list of Movies for the Now Playing Type', () async {
     // arrange
     when(
       () => serviceMock.getNowPlayingMovies(),
@@ -83,7 +83,7 @@ void main() {
     expect(store.nowPlayingMovies, isNotEmpty);
   });
 
-   test('Should return a list of Movies for the Search Type', () async {
+  test('Should return a list of Movies for the Search Type', () async {
     // arrange
     when(
       () => serviceMock.fetchMovieSearch('test'),
@@ -98,9 +98,9 @@ void main() {
     expect(result, isA<List<Movie>>());
     expect(result.length, 1);
     expect(store.searchMovies, isNotEmpty);
-  });  
+  });
 
-test('Should return a list of the cast on the movie', () async {
+  test('Should return a list of the cast on the movie', () async {
     // arrange
     when(
       () => serviceMock.fetchMovieCredits(1),
@@ -114,6 +114,5 @@ test('Should return a list of the cast on the movie', () async {
     // assert
     expect(result, isA<List<Cast>>());
     expect(result.length, 1);
-  });  
-
+  });
 }

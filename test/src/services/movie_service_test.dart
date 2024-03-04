@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_db_app/src/config/http_client.dart/main.dart';
-import 'package:movie_db_app/src/error/failure.dart';
-import 'package:movie_db_app/src/services/movie_service.dart';
+import 'package:movie_db_app/src/modules/movies/data/error/failure.dart';
+import 'package:movie_db_app/src/modules/movies/data/services/movie_service.dart';
 
 class MockHttpClient extends Mock implements HttpClient {}
 

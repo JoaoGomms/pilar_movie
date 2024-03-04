@@ -1,15 +1,15 @@
 import 'dart:convert';
 
 import 'package:movie_db_app/src/config/http_client.dart/main.dart';
-import 'package:movie_db_app/src/models/cast_model.dart';
+import 'package:movie_db_app/src/modules/movies/data/models/cast_model.dart';
 
 import '../error/failure.dart';
 import '../models/movie_model.dart';
-import '../models/text_model.dart';
+import '../../l10n/movie_l10n.dart';
 
 class MovieService {
   final HttpClient client;
-  final TextModel text = TextModel();
+  final MovieL10n text = MovieL10n();
 
   MovieService(this.client);
 

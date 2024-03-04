@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../services/constants.dart';
+import '../../../data/services/constants.dart';
 
 class ListCast extends StatelessWidget {
   const ListCast({Key? key, required this.snapshot}) : super(key: key);

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movie_db_app/src/models/cast_model.dart';
-import '../../../models/movie_model.dart';
-import '../../../models/text_model.dart';
-import '../../../services/constants.dart';
-import '../../../services/movie_service.dart';
-import '../../components/widgets/back_button_widget.dart';
-import '../../components/widgets/custom_flexible_space_bar.dart';
-import '../../components/widgets/list_cast.dart';
-import '../../components/widgets/rating_container.dart';
-import '../../components/widgets/realese_date_container.dart';
+import 'package:movie_db_app/src/modules/movies/data/models/cast_model.dart';
+import '../../data/models/movie_model.dart';
+import '../../l10n/movie_l10n.dart';
+import '../../data/services/constants.dart';
+import '../../data/services/movie_service.dart';
+import '../components/widgets/back_button_widget.dart';
+import '../components/widgets/custom_flexible_space_bar.dart';
+import '../components/widgets/list_cast.dart';
+import '../components/widgets/rating_container.dart';
+import '../components/widgets/realese_date_container.dart';
 
 class MoviePage extends StatefulWidget {
   const MoviePage({super.key, required this.movie});
@@ -29,7 +29,7 @@ class _MoviePageState extends State<MoviePage> {
     castMovie = MovieService(GetIt.I()).fetchMovieCredits(widget.movie.id);
   }
 
-  final TextModel text = TextModel();
+  final MovieL10n text = MovieL10n();
 
   @override
   Widget build(BuildContext context) {
