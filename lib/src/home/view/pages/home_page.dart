@@ -105,14 +105,7 @@ class _HomePageState extends State<HomePage> {
         Expanded(
             child: TextField(
           controller: controller.textEditingController,
-          onSubmitted: (string) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SearchPage(string),
-              ),
-            );
-          },
+          onSubmitted: navigateToSearchPage,
           decoration: InputDecoration(
             hintText: text.buttonSearch,
             border: OutlineInputBorder(
@@ -127,15 +120,21 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               String searchText = controller.textEditingController.text;
 
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SearchPage(searchText),
-                ),
-              );
+              navigateToSearchPage(searchText);
             },
             icon: const Icon(Icons.search_rounded)),
       ],
+    );
+  }
+
+  void navigateToSearchPage(String searchText) {
+    if (searchText.isEmpty) return;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SearchPage(searchText),
+      ),
     );
   }
 }
